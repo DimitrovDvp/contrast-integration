@@ -18,7 +18,7 @@ import com.mentormate.csproject.services.ApplicationService;
 import com.mentormate.csproject.services.OrganizationService;
 
 @RestController
-@RequestMapping("/watches")
+@RequestMapping("/organizations")
 public class OrganizationController {
 	
 	private final OrganizationService organizationService;
