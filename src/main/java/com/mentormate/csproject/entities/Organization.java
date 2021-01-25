@@ -15,7 +15,7 @@ public class Organization extends BaseEntity {
 	private String name;
 	
 	@OneToMany(
-	        mappedBy = "organization",
+	        mappedBy = "organizationId",
 	        cascade = CascadeType.ALL,
 	        orphanRemoval = true
 	    )

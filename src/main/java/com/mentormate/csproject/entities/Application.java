@@ -2,9 +2,7 @@ package com.mentormate.csproject.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -13,12 +11,11 @@ public class Application extends BaseEntity {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
     @JoinColumn(name = "platform_id")
     private Platform platform;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    private Organization organization;
+	private long organizationId;
 	
     public String getName() {
         return name;
@@ -36,12 +33,12 @@ public class Application extends BaseEntity {
 		this.platform = platform;
 	}
 
-	public Organization getOrganization() {
-		return organization;
+	public long getOrganizationId() {
+		return organizationId;
 	}
 
-	public void setOrganization(Organization organization) {
-		this.organization = organization;
+	public void setOrganizationId(long organizationId) {
+		this.organizationId = organizationId;
 	}
     
 }
