@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS contrast_db;
 USE contrast_db;
 
+#TABLE DEFINITIONS
 CREATE TABLE IF NOT EXISTS `organization` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -23,6 +24,8 @@ CREATE TABLE IF NOT EXISTS `application` (
   FOREIGN KEY (`organization_id`) REFERENCES `organization` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
+#POPULATE SAMPLE DATA
 INSERT INTO organization (name) VALUES ("Mentormate");
 INSERT INTO organization (name) VALUES ("Contrast-Security");
 
