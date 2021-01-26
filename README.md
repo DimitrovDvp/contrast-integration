@@ -2,20 +2,20 @@
 
 The project is a REST API
 
-Supported Requests:
+**Supported Requests:**
 
-GET /organizations
-GET /organizations/{id}
-GET /organizations/{id}/applications
+GET /organizations<br />
+GET /organizations/{id}<br />
+GET /organizations/{id}/applications<br />
 
-Name(part of application's name to search for)
-GET /organizations/{id}/applications?name=mate
+Name(part of application's name to search for)<br />
+GET /organizations/{id}/applications?name=mate<br />
 
-Order=(column to order on) (asc|desc)
-GET /organizations/{id}/applications?name=mate&order='name asc'
+Order=(column to order on) (asc|desc)<br />
+GET /organizations/{id}/applications?name=mate&order='name asc'<br />
 
 
-Compile project with Maven
+**Compile project with Maven**
 
 1. Go to project's root directory
 
@@ -30,7 +30,7 @@ Sample data can be populated by running the INSERTS from:
 \contrast-integration\sql\prepopulate_data.sql 
 
 
-Run the project in a Docker container
+**Run the project in a Docker container**
 
 1. Go to project's root directory
 
