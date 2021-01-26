@@ -8,12 +8,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Organization extends BaseEntity {
 
 	@Column(name = "name", nullable = false)
 	private String name;
 	
+	@JsonIgnore
 	@OneToMany(
 	        mappedBy = "organizationId",
 	        cascade = CascadeType.ALL,
