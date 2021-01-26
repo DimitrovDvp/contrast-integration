@@ -20,12 +20,13 @@ public class OrganizationService {
 		this.organizationRepository = organizationRepository;
 	}
 	
-	public List<Organization> getAll(){
+	public List<Organization> getAllOrganizations(){
 		return this.organizationRepository.findAll();
 	}
 	
-	public Organization getById(Long id) throws EntityNotFoundException{
+	public Organization getOrganizationsById(Long id) throws EntityNotFoundException{
 		return organizationRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException(String.format("Organization with ID: %d does not exist.", id)));
 	}
+	
 }

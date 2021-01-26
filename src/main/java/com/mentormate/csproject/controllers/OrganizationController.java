@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mentormate.csproject.entities.Application;
@@ -32,16 +33,20 @@ public class OrganizationController {
 	
 	@GetMapping
     public ResponseEntity<List<Organization>> getAll() {
-		return new ResponseEntity<>(this.organizationService.getAll(), HttpStatus.OK);
+		return new ResponseEntity<>(this.organizationService.getAllOrganizations(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
     public ResponseEntity<Organization> getById(@PathVariable("id") Long id) throws EntityNotFoundException {
-		return new ResponseEntity<>(this.organizationService.getById(id), HttpStatus.OK);
+		return new ResponseEntity<>(this.organizationService.getOrganizationsById(id), HttpStatus.OK);
 	}
-
+    
 	@GetMapping("/{id}/applications")
-    public ResponseEntity<List<Application>> getApplications(@PathVariable("id") Long id) {
-		return new ResponseEntity<>(this.applicationService.getByOrganizationId(id), HttpStatus.OK);
+    public ResponseEntity<List<Application>> getApplications(@PathVariable("id") Long id,
+    		@RequestParam(required = false) String name,
+    		@RequestParam(required = false) String order) {
+		
+		return new ResponseEntity<>(this.applicationService.getByOrganizationId(id, name, order), HttpStatus.OK);
 	}
+    
 }
