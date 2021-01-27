@@ -1,6 +1,8 @@
 # contrast-integration
 
-The project is a REST API
+The project is a REST API written in Java with Spring framework. <br />
+The database used is MySQL with Hibernate for ORM. <br />The build tool is Maven and 
+the application is containerized with Docker.
 
 **Supported Requests:**
 
